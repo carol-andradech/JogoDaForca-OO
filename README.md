@@ -2,7 +2,7 @@
 **Alunos: Ana Carolina Andrade e Raphael Pereira**
 **Professor: Mark Douglas**
 
-#🎮 Jogo da Forca - Orientado a Objetos
+# 🎮 Jogo da Forca - Orientado a Objetos
 Este é um jogo da forca desenvolvido com princípios de programação orientada a objetos (POO). O jogo segue as regras tradicionais da forca, com algumas funcionalidades adicionais, como registro de pontuações, ranking de jogadores e a possibilidade de arriscar todas as palavras de uma vez.
 A cada rodada, o jogo escolhe um tema aleatório e três palavras relacionadas
 
