@@ -6,7 +6,8 @@ public class Palavra {
     private Tema tema;
 
     public Palavra(String texto, Tema tema) {
-        this.texto = texto.toUpperCase();
+        this.texto = texto.toUpperCase(); // Armazena o texto em maiúsculas para padronização
+        this.tema = tema;
         this.tema = tema;
     }
 

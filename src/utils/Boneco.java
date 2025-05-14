@@ -1,6 +1,10 @@
 package utils;
 
+// A classe Boneco é responsável por montar e exibir o boneco do jogo da forca
+// com base no número de erros cometidos pelo jogador
+
 public class Boneco {
+    // Array de strings que representa as partes do boneco e da estrutura da forca.
     public static String[] PARTES = {
             "  _______     \n",      // 0 - Base superior
             " |/      |    \n",      // 1 - Gancho
@@ -18,11 +22,19 @@ public class Boneco {
             " |     / \\   \n"     // 13 - Perna direita
     };
 
+    // Método estático que monta o boneco com base no número de erros cometidos.
+    // Parâmetro:
+    // - erros: número de erros cometidos pelo jogador (0 a 7).
+    // Retorna:
+    // - Uma string que representa o estado atual do boneco e da forca.
     public static String montar(int erros) {
+        // StringBuilder é usado para construir a string do boneco de forma eficiente.
         StringBuilder sb = new StringBuilder();
+
+         // Adiciona as partes fixas da forca (base superior e gancho).
         sb.append(PARTES[0]).append(PARTES[1]).append(PARTES[2]);
 
-        // Progressão do boneco
+        // Adiciona as partes do boneco progressivamente com base no número de erros.
         if(erros > 0) sb.append(PARTES[7]);  // Cabeça
         if(erros > 1) sb.append(PARTES[8]);  // Tronco
         if(erros > 2) sb.append(PARTES[9]);  // Braço esquerdo
@@ -31,9 +43,10 @@ public class Boneco {
         if(erros > 5) sb.append(PARTES[12]); // Perna esquerda
         if(erros > 6) sb.append(PARTES[13]); // Perna direita
 
-        // Parte fixa inferior
+        // Adiciona as partes fixas inferiores da forca (tronco e base da plataforma).
         sb.append(PARTES[3]).append(PARTES[4]).append(PARTES[5]).append(PARTES[6]);
 
+        // Retorna a string completa representando o estado atual do boneco e da forca.
         return sb.toString();
     }
 }
