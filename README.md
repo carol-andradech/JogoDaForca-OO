@@ -46,3 +46,35 @@ O jogador pode:
 
 - 🔒 Cada letra ainda encoberta no fim (se a rodada for vencida): +15 pontos por letra
 
+  ###Estrutura do projeto
+
+  src/
+├── Main.java                            
+│
+├── entities/                             
+│   ├── Jogador.java
+│   ├── Palavra.java
+│   ├── Rodada.java
+│   └── Tema.java
+│
+├── repositories/                         
+│   ├── JogadorRepository.java
+│   ├── MemoriaJogadorRepository.java
+│   ├── PalavraRepository.java
+│   ├── MemoriaPalavraRepository.java
+│   ├── TemaRepository.java
+│   └── MemoriaTemaRepository.java
+│
+├── services/                           
+│   ├── GerenciadorJogador.java
+│   ├── GerenciadorRanking.java
+│   ├── GerenciadorRodada.java
+│   └── GerenciadorTema.java           
+│
+├── utils/                            
+│   ├── Boneco.java                    
+│   └── Validador.java                   
+│
+└── exceptions/
+    └── RepositoryException.java        
+
