@@ -1,11 +1,12 @@
-import repositories.PalavraRepository;
-import repositories.TemaRepository;
 import services.*;
 import entities.*;
 import persistence.*;
 import utils.*;
-import exceptions.RepositoryException;
 import java.util.*;
+import repositories.PalavraRepository;
+import repositories.TemaRepository;
+import exceptions.RepositoryException;
+
 
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
@@ -13,6 +14,7 @@ public class Main {
     private static GerenciadorRodada gerenciadorRodada;
     private static TemaRepository temaRepo;
     private static PalavraRepository palavraRepo;
+    private static GerenciadorRanking gerenciadorRanking;
 
     public static void main(String[] args) {
         try {
@@ -29,6 +31,7 @@ public class Main {
         temaRepo = FileTemaRepository.getSoleInstance();
         palavraRepo = FilePalavraRepository.getSoleInstance();
         gerenciadorRodada = new GerenciadorRodada(temaRepo, palavraRepo);
+        gerenciadorRanking = new GerenciadorRanking();
     }
 
     private static void exibirMenuPrincipal() throws RepositoryException {
@@ -58,6 +61,7 @@ public class Main {
         System.out.print("\nDigite seu nome: ");
         String nome = scanner.nextLine();
         Jogador jogador = gerenciadorJogador.criarJogador(nome);
+        gerenciadorRanking.adicionarOuAtualizarJogador(jogador);
 
         boolean jogarNovamente;
         do {
@@ -172,9 +176,18 @@ public class Main {
         }
     }
 
-    private static void exibirRanking() {
-        // Implementação do ranking pode ser adicionada aqui
-        System.out.println("\n=== Ranking ===");
-        System.out.println("Funcionalidade em desenvolvimento!");
+   private static void exibirRanking() {
+    System.out.println("\n=== Ranking ===");
+    List<Jogador> ranking = gerenciadorRanking.getRanking();
+
+    if (ranking.isEmpty()) {
+        System.out.println("Nenhum jogador registrado no ranking ainda.");
+        return;
     }
+
+    int posicao = 1;
+    for (Jogador jogador : ranking) {
+        System.out.printf("%d. %s - %d pontos%n", posicao++, jogador.getNome(), jogador.getPontuacaoTotal());
+    }
+}
 }
