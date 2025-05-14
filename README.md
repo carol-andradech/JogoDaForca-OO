@@ -1,13 +1,14 @@
-# Trabalho de Programação OO  
+# Trabalho de Programação OO  - IFF
 **Alunos: Ana Carolina Andrade e Raphael Pereira**
 **Professor: Mark Douglas**
 
 # 🎮 Jogo da Forca - Orientado a Objetos
 Este é um jogo da forca desenvolvido com princípios de programação orientada a objetos (POO). O jogo segue as regras tradicionais da forca, com algumas funcionalidades adicionais, como registro de pontuações, ranking de jogadores e a possibilidade de arriscar todas as palavras de uma vez.
+<br>
 A cada rodada, o jogo escolhe um tema aleatório e três palavras relacionadas
 
-#📋 Regras do Jogo
-### 🎯 Fim da Rodada
+
+### 🎯 Rodadas
 A rodada termina quando:
 
 - ✅ O jogador arrisca e acerta as três palavras.
